@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -5,6 +6,47 @@ __pycache__/
 
 # C extensions
 *.so
+=======
+# Python bytecode
+*.py[cod]
+__pycache__/
+*.pyc
+
+# Django specific
+/logs/
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+db.sqlite3-journal
+*media/
+!media/admin-interface/
+
+
+*static/
+!/static/finance/
+staticfiles/
+
+# Environment variables
+# .env
+# *.env
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*.so
+*.dylib
+>>>>>>> 8098fa1 (🎉 Init commit)
 
 # Distribution / packaging
 .Python
@@ -20,6 +62,7 @@ parts/
 sdist/
 var/
 wheels/
+<<<<<<< HEAD
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -29,6 +72,14 @@ MANIFEST
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
+=======
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+>>>>>>> 8098fa1 (🎉 Init commit)
 *.manifest
 *.spec
 
@@ -46,6 +97,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+<<<<<<< HEAD
 *.py,cover
 .hypothesis/
 .pytest_cache/
@@ -133,6 +185,21 @@ celerybeat.pid
 env/
 venv/
 ENV/
+=======
+.hypothesis/
+.pytest_cache/
+
+# pyenv
+.python-version
+
+# Celery stuff
+celerybeat-schedule
+
+# virtualenv
+venv/
+ENV/
+env/
+>>>>>>> 8098fa1 (🎉 Init commit)
 env.bak/
 venv.bak/
 
@@ -143,6 +210,7 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
+<<<<<<< HEAD
 # mkdocs documentation
 /site
 
@@ -169,3 +237,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+=======
+/farabin-api/
+/notebooks/
+*.xlsx
+!*/excel_files/*.xlsx
+>>>>>>> 8098fa1 (🎉 Init commit)
