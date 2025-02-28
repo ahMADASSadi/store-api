@@ -21,7 +21,7 @@ class CategoryType(DjangoObjectType):
 class ProductType(DjangoObjectType):
     class Meta:
         model = Product
-        fields = ["id", "name", "price", "stock", "category", "description"]
+        fields = ["id", "title", "unit_price", "stock", "category", "description"]
 
 
 class Query(ObjectType):
