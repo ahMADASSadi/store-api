@@ -1,12 +1,12 @@
+from datetime import timedelta, timezone
 import random
-from datetime import datetime, timedelta, timezone
-from django.db import models
+
 from django.contrib.auth.models import AbstractUser as BaseUser, Group
 from django.utils.translation import gettext_lazy as _
+from django.db import models
 
 from core.validators import phone_number_validator
 from core.managers import UserManager
-# Create your models here.
 
 
 class User(BaseUser):
@@ -94,19 +94,3 @@ class OTP(models.Model):
     class Meta:
         verbose_name = _("OTP")
         verbose_name_plural = _("OTPs")
-
-
-class Address(models.Model):
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='addresses')
-    city = models.CharField(max_length=50)
-    province = models.CharField(max_length=50)
-    address = models.CharField(max_length=255)
-    postal_code = models.CharField(max_length=11)
-
-    def __str__(self):
-        return f"{self.address:10}"
-
-    class Meta:
-        verbose_name = _('Address')
-        verbose_name_plural = _('Addresses')

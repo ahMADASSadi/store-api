@@ -24,9 +24,6 @@ class UserManager(BaseManager):
 
             if not password:
                 raise ValueError('Superusers must have a password')
-            # Optionally, enforce that an email must be provided:
-            # if not email:
-            #     raise ValueError('Superusers must have an email address')
 
             user = self.model(phone_number=phone_number, email=email, **kwargs)
             user.set_password(password)

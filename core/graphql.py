@@ -1,9 +1,11 @@
 from graphql.execution.middleware import MiddlewareManager
-from core.middlewares import AuthenticationMiddleware
-from core.schemas import Query
-from core.mutations import Mutation
 from graphene.types import Schema
 
 
-schema = Schema(query=Query, middleware=[
+from core.middlewares import AuthenticationMiddleware
+from core.mutations import AuthMutation
+from core.schemas import Query
+
+
+schema = Schema(query=Query, mutation=[AuthMutation], middleware=[
     MiddlewareManager(AuthenticationMiddleware())])

@@ -1,5 +1,5 @@
-from graphene.types import ObjectType
 from graphql_jwt import (ObtainJSONWebToken, Verify, Refresh)
+from graphene.types import ObjectType
 
 
 class AuthMutation(ObjectType):
