@@ -251,10 +251,19 @@ class Order(models.Model):
         default=False, verbose_name=_("Is Delivered"))
 
     order_total_price = models.DecimalField(
-        max_digits=20, decimal_places=2, verbose_name=_("Order Total Price"))
+        max_digits=20, decimal_places=2, verbose_name=_("Order Total Price"), default=0)
 
     def __str__(self):
         return f"{self.cart.user.phone_number} - {self.created_at.strftime('%Y-%m-%d')}"
+
+    def save(self, *args, **kwargs):
+        if self.pk:
+            total_price = sum(item.price for item in self.items.all())
+
+            if self.order_total_price != total_price:
+                self.order_total_price = total_price
+
+        super().save(*args, **kwargs)
 
     @property
     def total_price(self):
@@ -289,3 +298,76 @@ class OrderItem(models.Model):
     class Meta:
         verbose_name = _("Order Item")
         verbose_name_plural = _("Order Items")
+
+
+class Payment(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="payments", verbose_name=_("User"))
+    order = models.OneToOneField(
+        Order, on_delete=models.CASCADE, related_name="payment", verbose_name=_("Order"))
+    transaction_id = models.CharField(
+        max_length=255, unique=True, verbose_name=_("Transaction ID"))
+    amount = models.DecimalField(
+        max_digits=10, decimal_places=2, verbose_name=_("Amount"))
+    is_successful = models.BooleanField(
+        default=False, verbose_name=_("Is successful"))
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name=_("Created at"))
+
+    def __str__(self):
+        return f"Payment {self.transaction_id} - {self.amount}"
+
+    class Meta:
+        verbose_name = _("Payment")
+        verbose_name_plural = _("Payments")
+
+
+class Review(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="reviews", verbose_name=_("User"))
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="reviews", verbose_name=_("Product"))
+    rating = models.PositiveIntegerField(
+        default=1, verbose_name=_("Rating"))  # 1 to 5 stars
+    comment = models.TextField(
+        blank=True, null=True, verbose_name=_("Comment"))
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name=_("Created At"))
+
+    def __str__(self):
+        return f"{self.user.username} - {self.rating} stars"
+
+    class Meta:
+        verbose_name = _("Review")
+        verbose_name_plural = _("Reviews")
+
+
+class Coupon(models.Model):
+    code = models.CharField(max_length=20, unique=True, verbose_name=_("Code"))
+    discount_percentage = models.PositiveIntegerField(
+        verbose_name=_("Discount Percentage"))
+    valid_from = models.DateTimeField(verbose_name=_("Valid From"))
+    valid_to = models.DateTimeField(verbose_name=_("Valid To"))
+    is_active = models.BooleanField(default=True, verbose_name=_("Is Active"))
+
+    def __str__(self):
+        return self.code
+
+    class Meta:
+        verbose_name = _("Coupon")
+        verbose_name_plural = _("Coupons")
+
+
+class Wishlist(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="wishlist", verbose_name=_("User"))
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE, related_name="wishlists", verbose_name=_("Product"))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Created At"))
+
+    def __str__(self):
+        return f"{self.user.username} - {self.product.title}"
+
+    class Meta:
+        verbose_name = _("Wishlist")
+        verbose_name_plural = _("Wishlists")
