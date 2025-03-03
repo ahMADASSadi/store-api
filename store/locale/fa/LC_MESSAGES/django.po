@@ -1,0 +1,327 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-03 20:31+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: store/admin.py:52
+msgid "Stock for selected products cleared."
+msgstr "موجودی محصولات انتخاب شده پاک شد."
+
+#: store/admin.py:53
+msgid "Clear Stock"
+msgstr "پاک کردن موجودی"
+
+#: store/models.py:14
+msgid "Profile Avatar"
+msgstr "آواتار پروفایل"
+
+#: store/models.py:16 store/models.py:158 store/models.py:198
+#: store/models.py:246
+msgid "Updated At"
+msgstr "به روز شده در"
+
+#: store/models.py:22
+msgid "Profile"
+msgstr "پروفایل"
+
+#: store/models.py:23
+msgid "Profiles"
+msgstr "پروفایل‌ها"
+
+#: store/models.py:28 store/models.py:143 store/models.py:305
+#: store/models.py:327 store/models.py:363
+msgid "User"
+msgstr "کاربر"
+
+#: store/models.py:31
+msgid "City"
+msgstr "شهر"
+
+#: store/models.py:34
+msgid "Province"
+msgstr "استان"
+
+#: store/models.py:36 store/models.py:42
+msgid "Address"
+msgstr "آدرس"
+
+#: store/models.py:43
+msgid "Addresses"
+msgstr "آدرس‌ها"
+
+#: store/models.py:48 store/models.py:90 store/models.py:191
+#: store/models.py:283 store/models.py:329 store/models.py:365
+msgid "Product"
+msgstr "محصول"
+
+#: store/models.py:49
+msgid "Image"
+msgstr "تصویر"
+
+#: store/models.py:55
+msgid "Product Image"
+msgstr "تصویر محصول"
+
+#: store/models.py:56
+msgid "Product Images"
+msgstr "تصاویر محصول"
+
+#: store/models.py:61
+msgid "Title"
+msgstr "عنوان"
+
+#: store/models.py:63
+msgid "Slug"
+msgstr "نامک"
+
+#: store/models.py:65
+msgid "Description"
+msgstr "توضیحات"
+
+#: store/models.py:68 store/models.py:201 store/models.py:289
+msgid "Price"
+msgstr "قیمت"
+
+#: store/models.py:71 store/models.py:102
+msgid "Category"
+msgstr "دسته‌بندی"
+
+#: store/models.py:74 store/models.py:137
+msgid "Color"
+msgstr "رنگ"
+
+#: store/models.py:77 store/models.py:126
+msgid "Size"
+msgstr "اندازه"
+
+#: store/models.py:80
+msgid "Stock"
+msgstr "موجودی"
+
+#: store/models.py:91
+msgid "Products"
+msgstr "محصولات"
+
+#: store/models.py:103
+msgid "Categories"
+msgstr "دسته‌بندی‌ها"
+
+#: store/models.py:108
+msgid "XS"
+msgstr "ایکس اسمال"
+
+#: store/models.py:109
+msgid "S"
+msgstr "اسمال"
+
+#: store/models.py:110
+msgid "M"
+msgstr "مدیوم"
+
+#: store/models.py:111
+msgid "L"
+msgstr "لارج"
+
+#: store/models.py:112
+msgid "XL"
+msgstr "ایکس لارج"
+
+#: store/models.py:113
+msgid "XXL"
+msgstr "دبل ایکس لارج"
+
+#: store/models.py:114
+msgid "XXXL"
+msgstr "تریپل ایکس لارج"
+
+#: store/models.py:120 store/models.py:131
+msgid "Value"
+msgstr "مقدار"
+
+#: store/models.py:127
+msgid "Sizes"
+msgstr "اندازه‌ها"
+
+#: store/models.py:138
+msgid "Colors"
+msgstr "رنگ‌ها"
+
+#: store/models.py:146
+msgid "Total Price"
+msgstr "قیمت کل"
+
+#: store/models.py:149
+msgid "Is Paid"
+msgstr "پرداخت شده"
+
+#: store/models.py:152 store/models.py:249
+msgid "Is Shipped"
+msgstr "ارسال شده"
+
+#: store/models.py:155 store/models.py:196 store/models.py:243
+#: store/models.py:335 store/models.py:366
+msgid "Created At"
+msgstr "ایجاد شده در"
+
+#: store/models.py:182 store/models.py:188 store/models.py:230
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: store/models.py:183
+msgid "Carts"
+msgstr "سبدهای خرید"
+
+#: store/models.py:194 store/models.py:286
+msgid "Quantity"
+msgstr "تعداد"
+
+#: store/models.py:216
+msgid "Cart Item"
+msgstr "آیتم سبد خرید"
+
+#: store/models.py:217
+msgid "Cart Items"
+msgstr "آیتم‌های سبد خرید"
+
+#: store/models.py:221
+msgid "Pending"
+msgstr "در انتظار"
+
+#: store/models.py:222
+msgid "Shipped"
+msgstr "ارسال شده"
+
+#: store/models.py:223
+msgid "Delivered"
+msgstr "تحویل داده شده"
+
+#: store/models.py:224
+msgid "Canceled"
+msgstr "لغو شده"
+
+#: store/models.py:233
+msgid "Shipping Address"
+msgstr "آدرس ارسال"
+
+#: store/models.py:236
+msgid "Payment Method"
+msgstr "روش پرداخت"
+
+#: store/models.py:239
+msgid "Order Status"
+msgstr "وضعیت سفارش"
+
+#: store/models.py:251
+msgid "Is Delivered"
+msgstr "تحویل داده شده"
+
+#: store/models.py:254
+msgid "Order Total Price"
+msgstr "قیمت کل سفارش"
+
+#: store/models.py:273 store/models.py:279 store/models.py:307
+msgid "Order"
+msgstr "سفارش"
+
+#: store/models.py:274
+msgid "Orders"
+msgstr "سفارش‌ها"
+
+#: store/models.py:299
+msgid "Order Item"
+msgstr "آیتم سفارش"
+
+#: store/models.py:300
+msgid "Order Items"
+msgstr "آیتم‌های سفارش"
+
+#: store/models.py:309
+msgid "Transaction ID"
+msgstr "شناسه تراکنش"
+
+#: store/models.py:311
+msgid "Amount"
+msgstr "مبلغ"
+
+#: store/models.py:313
+msgid "Is successful"
+msgstr "موفق"
+
+#: store/models.py:315
+msgid "Created at"
+msgstr "ایجاد شده در"
+
+#: store/models.py:321
+msgid "Payment"
+msgstr "پرداخت"
+
+#: store/models.py:322
+msgid "Payments"
+msgstr "پرداخت‌ها"
+
+#: store/models.py:331
+msgid "Rating"
+msgstr "امتیاز"
+
+#: store/models.py:333
+msgid "Comment"
+msgstr "نظر"
+
+#: store/models.py:341
+msgid "Review"
+msgstr "بررسی"
+
+#: store/models.py:342
+msgid "Reviews"
+msgstr "بررسی‌ها"
+
+#: store/models.py:346
+msgid "Code"
+msgstr "کد"
+
+#: store/models.py:348
+msgid "Discount Percentage"
+msgstr "درصد تخفیف"
+
+#: store/models.py:349
+msgid "Valid From"
+msgstr "معتبر از"
+
+#: store/models.py:350
+msgid "Valid To"
+msgstr "معتبر تا"
+
+#: store/models.py:351
+msgid "Is Active"
+msgstr "فعال"
+
+#: store/models.py:357
+msgid "Coupon"
+msgstr "کوپن"
+
+#: store/models.py:358
+msgid "Coupons"
+msgstr "کوپن‌ها"
+
+#: store/models.py:372
+msgid "Wishlist"
+msgstr "لیست آرزو"
+
+#: store/models.py:373
+msgid "Wishlists"
+msgstr "لیست‌های آرزو"
