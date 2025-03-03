@@ -1,18 +1,22 @@
+from django.conf.urls.i18n import i18n_patterns
 from django.urls import path, include, re_path
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.conf import settings
 
 
-from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+from drf_spectacular.views import (
+    SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView)
+from debug_toolbar.toolbar import debug_toolbar_urls
+
 
 urlpatterns = [
-    re_path(r'^i18n/', include('django.conf.urls.i18n')),
 
     path('admin/', admin.site.urls),
 
     path('store/', include('store.urls')),
 
+    re_path(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
 if settings.DEBUG:
@@ -29,3 +33,4 @@ if settings.DEBUG:
                           document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_ROOT)
+    urlpatterns += debug_toolbar_urls()
