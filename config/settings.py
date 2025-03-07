@@ -35,8 +35,8 @@ INSTALLED_APPS = [
 ]
 
 PROJECT_APPS = [
-    "core",
     "store",
+    "core",
 ]
 
 THIRD_PARTY_APPS = [
@@ -145,6 +145,11 @@ MEDIA_ROOT = 'media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTHENTICATION_BACKENDS = [
+    'core.backends.HybridAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -181,7 +186,7 @@ CELERY_TASK_RESULT_EXPIRES = 3600
 CELERY_TASK_ACKS_LATE = True
 
 
-LOG_DIR = Path(gettempdir())/"store_logs"
+LOG_DIR = Path(gettempdir())/"store_logs" if not DEBUG else BASE_DIR / "logs"
 
 if not os.path.exists(LOG_DIR):
     os.makedirs(LOG_DIR)
@@ -198,7 +203,7 @@ LOGGING = {
             "format": "{levelname} {message}",
             "style": "{",
         },
-        "json": {  # Structured JSON logging (useful for external logging systems)
+        "json": {
             "format": "{{\"timestamp\": \"{asctime}\", \"level\": \"{levelname}\", \"message\": \"{message}\"}}",
             "style": "{",
         },
@@ -214,7 +219,7 @@ LOGGING = {
             "class": "logging.handlers.RotatingFileHandler",
             "filename": LOG_DIR / "django.log",
             "formatter": "verbose",
-            "maxBytes": 5 * 1024 * 1024,  # 5 MB
+            "maxBytes": 5 * 1024 * 1024, 
             "backupCount": 3,
         },
         "error_file": {
@@ -222,7 +227,7 @@ LOGGING = {
             "class": "logging.handlers.RotatingFileHandler",
             "filename": LOG_DIR / "errors.log",
             "formatter": "verbose",
-            "maxBytes": 5 * 1024 * 1024,  # 5 MB
+            "maxBytes": 5 * 1024 * 1024, 
             "backupCount": 3,
         },
         "json_file": {
@@ -265,7 +270,7 @@ for app in LOG_APPS:
         "class": "logging.handlers.RotatingFileHandler",
         "filename": LOG_DIR / f"{app}_logs.log",
         "formatter": "verbose",
-        "maxBytes": 5 * 1024 * 1024,  # 5 MB
+        "maxBytes": 5 * 1024 * 1024,
         "backupCount": 3,
     }
 
@@ -274,7 +279,7 @@ for app in LOG_APPS:
         "class": "logging.handlers.RotatingFileHandler",
         "filename": LOG_DIR / f"{app}_errors.log",
         "formatter": "verbose",
-        "maxBytes": 5 * 1024 * 1024,  # 5 MB
+        "maxBytes": 5 * 1024 * 1024,
         "backupCount": 3,
     }
 
