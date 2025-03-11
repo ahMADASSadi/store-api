@@ -20,12 +20,14 @@ HOST_NAME = gethostname()
 
 DEBUG = env.bool("STORE_DEBUG", default=True)
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"] if DEBUG else env.list(
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"] if DEBUG else env.list(
     "STORE_ALLOWED_HOSTS", default=[])
 
 INTERNAL_IPS = ["127.0.0.1"] if DEBUG else None
 
 INSTALLED_APPS = [
+    'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +55,8 @@ THIRD_PARTY_APPS.append("debug_toolbar",) if DEBUG else None
 
 INSTALLED_APPS += PROJECT_APPS + THIRD_PARTY_APPS
 
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -219,7 +223,7 @@ LOGGING = {
             "class": "logging.handlers.RotatingFileHandler",
             "filename": LOG_DIR / "django.log",
             "formatter": "verbose",
-            "maxBytes": 5 * 1024 * 1024, 
+            "maxBytes": 5 * 1024 * 1024,
             "backupCount": 3,
         },
         "error_file": {
@@ -227,7 +231,7 @@ LOGGING = {
             "class": "logging.handlers.RotatingFileHandler",
             "filename": LOG_DIR / "errors.log",
             "formatter": "verbose",
-            "maxBytes": 5 * 1024 * 1024, 
+            "maxBytes": 5 * 1024 * 1024,
             "backupCount": 3,
         },
         "json_file": {
