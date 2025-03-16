@@ -26,6 +26,7 @@ gunicorn = "^23.0.0"
 flower = "^2.0.1"
 django-admin-interface = "^0.29.4"
 locust = "^2.33.1"
+redis = "^5.2.1"
 
 
 [build-system]
