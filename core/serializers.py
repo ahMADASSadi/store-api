@@ -54,23 +54,27 @@ class PasswordLoginSerializer(serializers.Serializer):
 
     def validate(self, data):
         phone_number = data['phone_number']
-        password = data['password']
+        password :str= data['password']
         user = User.objects.filter(phone_number=phone_number).first()
-        if not user or not user.check_password(password):
-            raise ValidationError("Invalid phone number or password")
-        if not user.is_active:
-            raise ValidationError("User account is inactive")
-        data['user'] = user
-        logger.info(
-            f"Password authentication for user completed successfully")
+        try:
+            if not user or not user.check_password(password):
+                raise ValidationError("Invalid phone number or password")
+            if not user.is_active:
+                raise ValidationError("User account is inactive")
+            data['user'] = user
+            logger.info(
+                f"Password authentication for user completed successfully")
+        except Exception as e:
+            logger.error(f"Error validating password: {str(e)}")
+            raise ValidationError("Set a valid password first")
         return data
 
     def save(self):
         user = self.validated_data['user']
         refresh = RefreshToken.for_user(user)
         return {
-            "access_token": str(refresh.access_token),
-            "refresh_token": str(refresh),
+            "access": str(refresh.access_token),
+            "refresh": str(refresh),
         }
 
 

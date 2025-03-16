@@ -10,10 +10,18 @@ from core.validators import phone_number_validator
 from core.managers import UserManager
 
 
+class Role(models.TextChoices):
+    Buyer = 'Buyer', _('Buyer')
+    Seller = 'Seller', _('Seller')
+    Admin = "Admin", _('Admin')
+
+
 class User(BaseUser):
     phone_number = models.CharField(max_length=11, validators=[
                                     phone_number_validator], null=False, unique=True, blank=False)
     password = models.CharField(max_length=128, null=True, blank=True)
+    role = models.CharField(verbose_name=_("Role"), max_length=200,
+                            null=False, blank=False, choices=Role.choices, default=Role.Buyer)
     created_at = models.DateTimeField(auto_now_add=True)
 
     is_active = models.BooleanField(default=True)

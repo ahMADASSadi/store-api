@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-03 20:29+0330\n"
+"POT-Creation-Date: 2025-03-14 17:30+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,57 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-#: core/models.py:32
+
+#: core/admin.py:28
+msgid "Roles"
+msgstr "نقش‌ها"
+
+#: core/models.py:14
+msgid "Buyer"
+msgstr "خریدار"
+
+#: core/models.py:15
+msgid "Seller"
+msgstr "فروشنده"
+
+#: core/models.py:16
+msgid "Admin"
+msgstr "ادمین"
+
+#: core/models.py:23
+msgid "Role"
+msgstr "نقش"
+
+#: core/models.py:33
 msgid "groups"
 msgstr "گروه‌ها"
 
-#: core/models.py:35
+#: core/models.py:36
 msgid ""
 "The groups this user belongs to. A user will get all permissions granted to "
 "each of their groups."
 msgstr ""
 
-#: core/models.py:43
+#: core/models.py:44
 msgid "user permissions"
 msgstr "اجازه‌های کاربر"
 
-#: core/models.py:45
+#: core/models.py:46
 msgid "Specific permissions for this user."
 msgstr ""
 
-#: core/models.py:72
+#: core/models.py:75
 msgid "User"
 msgstr "کاربر"
 
-#: core/models.py:73
+#: core/models.py:76
 msgid "Users"
 msgstr "کاربران"
 
-#: core/models.py:95
+#: core/models.py:119
 msgid "OTP"
 msgstr "کد یکبار مصرف"
 
-#: core/models.py:96
+#: core/models.py:120
 msgid "OTPs"
 msgstr "کدهای یکبار مصرف"

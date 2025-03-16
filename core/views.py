@@ -158,8 +158,8 @@ class AuthenticationViewSet(viewsets.ViewSet):
                     "status": "success",
                     "data": {
                         "message": "Login successful",
-                        "access_token": tokens["access_token"],
-                        "refresh_token": tokens["refresh_token"]
+                        "access": tokens["access"],
+                        "refresh": tokens["refresh"]
                     }
                 },
                 status=status.HTTP_200_OK
